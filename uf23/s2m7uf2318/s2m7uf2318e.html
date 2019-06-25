@@ -1,0 +1,124 @@
+ <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/s2m7uf2318.css" type="text/css" rel="stylesheet"/>    
+    <title>Player</title>
+  </head>
+  <body>
+    <div id="tot">
+      <h1>Audio</h1>
+      <div id="sonant">
+        <img src="" id="imatge"/>
+        <ul id="info">
+          <li id="grup"></li>
+          <li id="disc"></li>
+          <li id="titol"></li>        
+          <li id="duracio"></li>
+        </ul>
+        <audio src="" id="music" type="audio/mp3"></audio>
+      </div>   
+      <input id="barra" type="range" min="0" max="10000" value="0" step="1">
+      <ul id="control">
+          <li id="enrere"><</li>
+          <li id="ico"><img id="icona" src="img/icons/play.png"/></li>
+          <li id="endavant">></li>
+          <li id="volum-">–</li>
+          <li id="vol">VOL</li>
+          <li id="volum">+</li>
+      </ul>
+    </div>
+  <script type="text/javascript">
+      var player=document.getElementById('music');
+      var icon=document.getElementById('icona');
+      var volumen=document.getElementById('volum');
+      var vol=document.getElementById('volum-');
+      var barra=document.getElementById("barra");
+      var vesa, noutemps;
+      var i=0;
+      
+      var grup=["Botifarra","Al Tall","ZOO","Xavi Sarrià","Smoking Souls","Auxili","Auxili","Ls gossa sorda"];
+      var disc=["T'en cantaré mes de mil","Deixeu que rode la roda","Raval","Amb l'esperança entre les dents","Cendra i Or","Foc i vent","Tresors","La polseguera"];
+      var image=["audio/playlist/botifarra.jpg","audio/playlist/altall.jpg","audio/playlist/raval.jpg","audio/playlist/Amblesperancaentrelesdents.jpg","audio/playlist/CendraiOr.jpg","audio/playlist/Focivent.jpg","audio/playlist/tresors.jpg","audio/playlist/polseguera.jpg"];
+      var titol=["La malaguenya de Barxeta","El cant dels maulets","Correfoc","Ingovernables","Guarda'm l'aire","Foc i vent","Hui la liem","ESBARZERS"];
+      var canso=["audio/playlist/barxeta.mp3","audio/playlist/maulets.mp3","audio/playlist/10Correfoc.mp3","audio/playlist/02Ingovernables.mp3","audio/playlist/11Guardaaire.mp3","audio/playlist/Focivent.mp3","audio/playlist/Huilaliem.mp3","audio/playlist/ESBARZERS.mp3"]; 
+
+      
+      document.getElementById('grup').innerHTML=grup[i];
+      document.getElementById('disc').innerHTML=disc[i];
+      document.getElementById('imatge').src=image[i];
+      player.src=canso[i];
+      document.getElementById('titol').innerHTML=titol[i];
+
+      
+      icon.addEventListener('click',sona);
+      volumen.addEventListener('click',volum);
+      vol.addEventListener('click',volu);
+
+      document.getElementById('endavant').addEventListener('click',endavant);
+      document.getElementById('enrere').addEventListener('click',enrere);
+      /*document.getElementById('stop').addEventListener('click',stop);*/
+
+      function endavant(){
+        if (i==canso.length-1) {i=0;} else{i++;}
+        document.getElementById('imatge').src=image[i];
+        player.src=canso[i];
+        document.getElementById('titol').innerHTML=titol[i]; 
+        document.getElementById('grup').innerHTML=grup[i];
+        document.getElementById('disc').innerHTML=disc[i];
+      }
+      function enrere(){
+        if (i==0) {i=canso.length-1;} else {i--;}
+        document.getElementById('imatge').src=image[i];
+        player.src=canso[i];
+        document.getElementById('titol').innerHTML=titol[i]; 
+        document.getElementById('grup').innerHTML=grup[i];
+        document.getElementById('disc').innerHTML=disc[i];
+      }
+      
+      function sona(){
+        if (icon.src.match("img/icons/play.png")){
+          icon.src="img/icons/pause.png";
+          player.play();
+        }
+        else{
+          icon.src="img/icons/play.png";
+          player.pause();
+        }        
+      }     
+      function stop(){
+        player.pause();
+        player.currentTime=0;
+      }
+      function volum(){
+        player.volume+=0.2;
+      }
+      function volu(){
+        player.volume-=0.2;
+      }     
+      
+      barra.addEventListener("change", posicioAudio, false);
+      player.addEventListener("timeupdate", actualitzaTemps, false);
+
+
+      function posicioAudio() {
+        var vesa = parseInt(player.duration * (barra.value / 10000));
+        player.currentTime = vesa;
+        console.log(player.currentTime);
+      }
+
+
+      function actualitzaTemps() {
+        var noutemps = parseInt(player.currentTime * (10000 / player.duration));
+        barra.value = noutemps;
+        console.log(barra.value);
+      }
+
+      /*document.getElementById('duracio').innerHTML=Number(player.duration);*/
+      
+  
+  </script>
+  </body>
+
+</html>

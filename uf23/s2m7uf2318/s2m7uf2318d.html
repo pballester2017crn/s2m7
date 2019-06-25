@@ -1,0 +1,122 @@
+ <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="css/s2m7uf2318.css" type="text/css" rel="stylesheet"/>    
+    <title>Player</title>
+  </head>
+  <body>
+    <div id="tot">
+      <h1>Audio</h1>
+      <div id="sonant">
+        <img src="" id="imatge"/>
+        <ul id="info">
+          <li id="grup"></li>
+          <li id="disc"></li>
+          <li id="titol"></li>        
+          <li id="duracio"></li>
+        </ul>
+        <audio src="" id="music" type="audio/mp3"></audio>
+      </div>   
+      <input id="barra" type="range" min="0" max="10000" value="0" step="1">
+      <ul id="control">
+          <li id="enrere"><</li>
+          <li id="ico"><img id="icona" src="img/icons/play.png"/></li>
+          <li id="endavant">></li>
+          <li id="volum-">-</li>
+          <li id="vol">VOL</li>
+          <li id="volum">+</li>
+      </ul>
+    </div>
+  <script type="text/javascript">
+      var player=document.getElementById('music');
+      var icon=document.getElementById('icona');
+      var volumen=document.getElementById('volum');
+      var vol=document.getElementById('volum-');
+      var barra=document.getElementById("barra");
+      var vesa, noutemps;
+      var i=0;
+      
+      var grup=["ZOO"];
+      var disc=["Tempestes venen del sud"];
+      var image=["audio/zoo/zoosud.jpg"];
+      var titol=["01 intro","02 vull","03 estiu","04 corbelles","05 carrer de l'amargura","06 imperfeccions","07 aquesta vora","08 hivern","09xuplasangs","10 lanostra bota","11 faena"];
+      var canso=["audio/zoo/01intro.mp3","audio/zoo/02vull.mp3","audio/zoo/03estiu.mp3","04corbelles.mp3","05carreramargura.mp3","06imperfeccions.mp3","07aquestavora.mp3","08hivern.mp3","09xuplasangs.mp3","10lanostrabota.mp3","11faena.mp3"]; 
+
+      
+      document.getElementById('grup').innerHTML=grup[0];
+      document.getElementById('disc').innerHTML=disc[0];
+      document.getElementById('imatge').src=image[0];
+      player.src=canso[i];
+      document.getElementById('titol').innerHTML=titol[i];
+
+      
+      icon.addEventListener('click',sona);
+      volumen.addEventListener('click',volum);
+      vol.addEventListener('click',volu);
+
+      document.getElementById('endavant').addEventListener('click',endavant);
+      document.getElementById('enrere').addEventListener('click',enrere);
+      /*document.getElementById('stop').addEventListener('click',stop);*/
+
+      function endavant(){
+        if (i==canso.length-1) {i=0;} else{i++;}
+        document.getElementById('imatge').src=image[0];
+        player.src=canso[i];
+        document.getElementById('titol').innerHTML=titol[i]; 
+        
+      }
+      function enrere(){
+        if (i==0) {i=canso.length-1;} else {i--;}
+        document.getElementById('imatge').src=image[0];
+        player.src=canso[i];
+        document.getElementById('titol').innerHTML=titol[i]; 
+         
+      }
+      
+      function sona(){
+        if (icon.src.match("img/icons/play.png")){
+          icon.src="img/icons/pause.png";
+          player.play();
+        }
+        else{
+          icon.src="img/icons/play.png";
+          player.pause();
+        }        
+      }     
+      function stop(){
+        player.pause();
+        player.currentTime=0;
+      }
+      function volum(){
+        player.volume+=0.2;
+      }
+      function volu(){
+        player.volume-=0.2;
+      }     
+      
+      barra.addEventListener("change", posicioAudio, false);
+      player.addEventListener("timeupdate", actualitzaTemps, false);
+
+
+      function posicioAudio() {
+        var vesa = parseInt(player.duration * (barra.value / 10000));
+        player.currentTime = vesa;
+        console.log(player.currentTime);
+      }
+
+
+      function actualitzaTemps() {
+        var noutemps = parseInt(player.currentTime * (10000 / player.duration));
+        barra.value = noutemps;
+        console.log(barra.value);
+      }
+
+      /*document.getElementById('duracio').innerHTML=Number(player.duration);*/
+      
+  
+  </script>
+  </body>
+
+</html>
