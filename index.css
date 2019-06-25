@@ -82,11 +82,11 @@ li{
 }
 .secundari li:hover{
 	color: #FFF;
-	background-color: #A19D77;
+	background-color: #6FBFB7;
 }
 .secundari li:active{
 	color: #FFF;
-	background-color: #A19D77;
+	background-color: #6FBFB7;
 }
 a{	
 	text-decoration: none;
@@ -163,11 +163,11 @@ h2{
 	}	
 	.secundari li:hover{
 		color: #FFF;
-		background-color: #A19D77;
+		background-color: #6FBFB7;
 	}
 	.secundari li:active{
 		color: #FFF;
-		background-color: #A19D77;
+		background-color: #6FBFB7;
 	}
 	a{	
 		text-decoration: none;		
