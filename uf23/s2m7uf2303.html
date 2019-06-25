@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Confirm</title>
+    <style>
+      body{
+        font-size: 144px;
+        font-weight: 900;
+        font-family: sans-serif;
+        color: #093;
+
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" language="javascript">
+
+      var sortir=confirm("Segur que vols tancar l'aplicació?");
+
+      if(sortir==true){
+        document.write("Tancant l'aplicació...");
+        document.body.style.backgroundColor="#000";
+      }
+      else{
+        document.write("Continua...");
+        document.body.style.backgroundColor="#FF0";
+      }
+
+    </script>
+  </body>
+</html>

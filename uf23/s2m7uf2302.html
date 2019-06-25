@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>login</title>
+  </head>
+  <body>
+    <script type="text/javascript" language="javascript">
+    //Aquí demanem que s'introdueixin dades
+      var mail=prompt("Escriu el teu mail:");
+      var password=prompt("Escriu el teu password");
+      
+    // Aquí definim les variables guardades
+      var mailguardat="pballester@artsgrafiques.org";
+      var passwordguardat="12345678";
+
+    // Aquí fem la comparació
+      if(mail==mailguardat & password==passwordguardat){
+        document.write("Benvigut al teu compte de gmail "+mail);
+      }      
+      else{
+        alert("Dades incorrectes");
+      }
+    </script>
+  </body>
+</html>

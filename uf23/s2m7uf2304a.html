@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>    
+    <title>DiaNit</title>
+    <style>
+      body{
+        font-size: 72px;
+        font-weight: 900;
+        font-family: sans-serif; 
+        margin: 0;
+        padding: 50px; 
+      }
+      ul{
+
+      }
+      li{
+        display: inline-block;
+        cursor: pointer;
+        margin: 10px;
+      }
+      #dia{
+            width: 100px;
+            height: 100px;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            background-color: #FD3;
+      }
+      #nit{
+            width: 100px;
+            height: 100px;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            -moz-box-shadow: 30px 10px 0 #d9534f;
+            -webkit-box-shadow: 30px 10px 0 #d9534f;
+            box-shadow: 30px 10px 0 #d9534f;
+            margin-right: 60px;
+      }
+      #a{
+        font-size: 0.5em;
+      }
+      #aa{
+        font-size: 1em;
+      }
+      #aaa{
+        font-size: 1.5em;
+      }
+      #contingut{
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li id="dia"></li>
+      <li id="nit"></li>
+      <li id="a">A</li>
+      <li id="aa">A</li>
+      <li id="aaa">A</li>
+    </ul>
+    <p id="contingut">Lorem ipsum</p>
+    <script type="text/javascript" language="javascript">
+      document.getElementById("dia").addEventListener('click',dia);
+      document.getElementById("nit").addEventListener('click',nit);
+      document.getElementById("a").addEventListener('click',a);
+      document.getElementById("aa").addEventListener('click',aa);
+      document.getElementById("aaa").addEventListener('click',aaa);
+      function dia(){
+        document.body.style.backgroundColor="#FFF";
+        document.body.style.color="#333";
+      }
+      function nit(){
+        document.body.style.backgroundColor="#333";
+        document.body.style.color="#FFF";
+      }
+      function a(){
+        document.getElementById("contingut").style.fontSize="1em";
+      }
+      function aa(){
+        document.getElementById("contingut").style.fontSize="2em";
+      }
+      function aaa(){
+        document.getElementById("contingut").style.fontSize="3em";
+      }
+    </script>
+  </body>
+</html>
