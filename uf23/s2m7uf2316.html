@@ -1,0 +1,132 @@
+ <html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vídeo</title>
+    <style>
+      body{
+        font-size: 48px;
+        font-weight: 900;
+        font-family: sans-serif;
+        color: #000;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      h1{
+        text-align: center;
+        text-transform: uppercase;
+        margin: 20px 0;
+        letter-spacing: 0.5em;
+      }
+      #gran{
+        width: 80%;
+        margin: 0;
+        padding: 0;        
+      }
+      #aside{
+        width: 20%;
+        float: right;        
+        margin: 0;
+        padding: 0;
+      }
+      
+      #vide{
+        width: 100%;
+        margin: 0;
+        padding: 0; 
+      }
+      
+      @media screen and (max-width: 480px){
+        .vi{
+          width: 100%;
+          height: 10%;
+          cursor: pointer;          
+          margin: 2px 0;
+          padding: 0; 
+          background-color: green;            
+        }
+        h1{
+          font-size: 36px;
+          text-align: center;
+          text-transform: uppercase;
+          margin: 20px 0;
+          letter-spacing: 0.5em;
+        }
+      }
+      @media screen and (max-width: 768px) and (min-width: 481px){
+        .vi{
+          width: 100%;
+          height: 14%;
+          cursor: pointer;          
+          margin: 3px 0;
+          padding: 0;                          
+        }
+        h1{
+          font-size: 48px;
+          text-align: center;
+          text-transform: uppercase;
+          margin: 20px 0;
+          letter-spacing: 0.5em;
+          
+        }
+      }
+      @media screen and (min-width: 769px){
+        .vi{
+          width: 100%;
+          height: 20%;
+          cursor: pointer;          
+          margin: 5px 0;
+          padding: 0;
+          background-color: red;                    
+        }
+      }  
+    
+    </style>
+  </head>
+  <body>
+    <h1>Videos</h1>
+    <div id="aside">
+      <video poster="video/senior03.jpg" class="vi" src="video/Senior.webm" type="video/webm">
+      </video>
+      <video poster="video/zoo02.jpg" class="vi" src="video/ZOO.webm" type="video/webm">
+      </video>
+      <video poster="video/gossa.png" class="vi" src="video/Gossa.webm" type="video/webm">
+      </video>
+      <video poster="video/arthurmi.jpg" class="vi" src="video/arthur.webm" type="video/webm">
+      </video>
+      
+    </div>
+    <div id="gran">
+      <video autoplay id="vide" src="video/Senior.webm" type="video/webm"></video>
+    </div>
+    
+    
+
+    <script type="text/javascript" language="javascript">
+    /*video*/
+    var vide=document.getElementById('vide');
+    var vi=document.getElementsByClassName('vi');
+    function vi0(){
+      vide.src=vi[0].src;
+    }
+    function vi1(){
+      vide.src=vi[1].src;
+    }
+    function vi2(){
+      vide.src=vi[2].src;
+    }
+    function vi3(){
+      vide.src=vi[3].src;
+    }
+    
+    vi[0].addEventListener('click', vi0);
+    vi[1].addEventListener('click', vi1);
+    vi[2].addEventListener('click', vi2);
+    vi[3].addEventListener('click', vi3);
+    
+    
+    </script>
+  </body>
+</html>

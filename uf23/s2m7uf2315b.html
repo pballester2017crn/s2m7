@@ -1,0 +1,82 @@
+ <html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Imatge01</title>
+    <style>
+      body{
+        font-size: 36px;
+        font-weight: 900;
+        font-family: sans-serif;
+        color: rgba(255,255,255,0.5);
+        margin: 0;
+        padding: 0;
+      }
+      #tot{
+        width: 100%;
+        margin: 0 auto;
+      }    
+    #imatge{
+      width: 100%;
+    }
+    ul{
+      
+      margin: 0;
+      padding: 0;
+      height: 40%;
+      position: relative;
+      top: -725px;
+      
+    }
+    li{
+      list-style-type: none;
+      display: inline-block;
+      font-size: 10em;
+      line-height: 2em;
+      cursor: pointer;      
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    #enrere{
+      width: 30%;
+    }
+    #endavant{
+      width: 30%;
+    }
+    #num{
+      width: 37.5%;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="tot">
+      <img id="imatge" src="img/menjar/food00.jpg"/>
+      <ul>
+        <li id="enrere"><</li>
+        <li id="num"></li>
+        <li id="endavant">></li>
+      </ul>
+    </div>
+
+    <script type="text/javascript" language="javascript">
+    var foton=['food00.jpg','food01.jpg','food02.jpg','food03.jpg','food04.jpg'];
+
+    var i=0;
+    function endavant(){
+      if (i==foton.length-1) {i=0;} else{i++;}
+      document.getElementById('num').innerHTML=i;
+      document.getElementById('imatge').src="img/menjar/"+foton[i];
+    }
+    function enrere(){
+      if (i==0) {i=foton.length-1;} else {i--;}
+      document.getElementById('num').innerHTML=i;
+      document.getElementById('imatge').src="img/menjar/"+foton[i];
+    }
+    document.getElementById('endavant').addEventListener('click',endavant);
+    document.getElementById('enrere').addEventListener('click',enrere);
+
+
+
+    </script>
+  </body>
+</html>

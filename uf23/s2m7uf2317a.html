@@ -1,0 +1,84 @@
+ <html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Bombeta</title>
+    <style>
+      body{
+        font-size: 48px;
+        font-weight: 900;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+
+      }
+    #image{
+      width: 60%;
+      margin: 20px auto;
+    }
+    img{
+      width: 100%;
+      cursor: pointer;
+      transform: rotate(180deg);
+    }
+    h2{      
+      text-align: center;
+      padding: 0;
+      margin: 80px 0 0 0;
+    }
+    ul{      
+      padding: 0;
+      width: 50%;
+      margin: 80px auto;
+      margin-top: 20px;
+      overflow: hidden;
+    }
+    ul li{
+      list-style-type: none;      
+      margin: 0;
+      padding: 0;
+      width: 48%;
+      height: 100px;
+      text-align: center;
+      line-height: 2em;
+      background-color: #333;
+      cursor: pointer;
+    }
+    #on{
+      float: left;
+      background-color: #FE2;
+      color: #000;
+    }
+    #off{
+      float: right;
+      background-color: #000;
+      color: #FFF;
+    }
+    </style>
+  </head>
+  <body>
+    <h2 id="estat">ESTAT</h2>
+    <ul>
+      <li id="on">ON</li>
+      <li id="off">OFF</li>
+    </ul>
+    <div id="image">
+      <img id="imatge" src="img/bombeta/bombeta_off.png"/>
+    </div>    
+    
+
+    <script type="text/javascript" language="javascript">
+    var image=document.getElementById('imatge');
+    document.getElementById('on').addEventListener('click', on);
+    document.getElementById('off').addEventListener('click', off);
+    
+    function on(){
+        image.src="img/bombeta/bombeta_on.png";
+        console.log("apagat");
+    }
+    function off(){
+        image.src="img/bombeta/bombeta_off.png";
+        console.log("ences");
+    }
+    </script>
+  </body>
+</html>

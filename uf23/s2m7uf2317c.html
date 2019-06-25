@@ -1,0 +1,57 @@
+ <html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Bombeta</title>
+    <style>
+      body{
+        font-size: 48px;
+        font-weight: 900;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+
+      }
+    #image{
+      width: 70%;
+      margin: 20px auto;
+    }
+    img{
+      width: 100%;
+      cursor: pointer;
+      transform: rotate(180deg);
+    }
+    h2{      
+      text-align: center;
+      padding: 50px 0;
+    }
+    </style>
+  </head>
+  <body>
+    <h2 id="estat"></h2>
+    <div id="image">
+      <img id="imatge" src="img/bombeta/bombeta_off.png"/>
+    </div>    
+    
+
+    <script type="text/javascript" language="javascript">
+    var image=document.getElementById('imatge');
+    document.getElementById('imatge').addEventListener('click', on);
+    function on(){
+      if (image.src.match("img/bombeta/bombeta_on.png")) {
+        image.src="img/bombeta/bombeta_off.png";
+        document.getElementById('estat').innerHTML="APAGAT";
+        document.getElementById('estat').style.backgroundColor="#000";
+        document.getElementById('estat').style.color="#FFF";
+        console.log("apagat");
+
+      } else {
+        image.src="img/bombeta/bombeta_on.png";
+        console.log("ences");
+        document.getElementById('estat').innerHTML="ENCÉS";
+        document.getElementById('estat').style.backgroundColor="#FE2";
+        document.getElementById('estat').style.color="#000";
+      }
+    }
+    </script>
+  </body>
+</html>
