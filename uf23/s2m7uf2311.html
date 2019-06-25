@@ -1,0 +1,38 @@
+ <html>
+  <head>    
+    <meta charset="UTF-8"/>
+    <title>JocPreguntes</title>
+    <style>
+      body{
+        font-size: 36px;
+        font-weight: 900;
+        font-family: sans-serif;
+        color: #093;
+
+      }
+
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" language="javascript">
+      //Variable array
+      var preguntes=["número 0","número 1","número 2","número 3"];
+      var respostes=["0","1","2","3"];
+      var i=0;
+      var contador=0;
+      //dies.length numero elements de la variable
+      while (i<preguntes.length) {
+        var contesta=prompt(preguntes[i]);
+        if (contesta==respostes[i]) {
+          contador++; //contador punts
+          alert("Resposta correcta, has aconseguit "+contador+" punts");
+          i++; //recorda augmentar contador preguntes
+        } else {
+          alert("La resposta correcta és: "+respostes[i]);
+          i++; //recorda augmentar contador preguntes
+        }
+      }
+
+    </script>
+  </body>
+</html>

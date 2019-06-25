@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>JocCàlcul</title>
+    <style>
+      body{
+        font-size: 96px;
+        font-weight: 900;
+        font-family: sans-serif;
+        color: #093;
+
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" language="javascript">
+    var x=Number(prompt("Primer número:"));
+    var y=Number(prompt("Segon número:"));
+    var contador=0;
+    var z=prompt("La suma de "+x+"+"+y+"=");
+    if (z==+x+y) {
+        contador++;
+        var x=prompt("El producte de"+z+"*"+y+"=");
+        if (x==z*y) {
+          contador++;
+          var z=prompt("La resta de "+x+"-"+y+"=");
+          if (z==x-y) {
+            contador++;
+            document.write("Molt bé, has aconseguit "+contador+" punts");
+          } else {
+            document.write("Game over, has aconseguit "+contador+" punts");
+          }
+        } else {
+          document.write("Game over, has aconseguit "+contador+" punts");
+        }
+    } else {
+        document.write("Game over, has aconseguit "+contador+" punts");
+    }
+
+    </script>
+  </body>
+</html>

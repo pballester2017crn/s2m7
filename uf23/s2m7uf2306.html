@@ -1,0 +1,95 @@
+<html>
+  <head>    
+    <meta charset="UTF-8"/>
+    <title>SemàforEduca</title>
+    <style>
+      body{
+        font-size: 72px;
+        color: #000;
+        font-family: sans-serif;
+        margin: 0;
+        padding: 50px;
+      }
+      h2{
+        margin: 0;
+        padding: 0;
+        font-size: 1em;
+        line-height: 1.4em;
+      }
+      ul{
+        width: 30%;
+        float: left;
+        margin: 0;
+        padding: 0;
+      }
+      li{
+        list-style-type: none;
+        width: 200px;
+        height: 200px;
+        margin: 15px;
+
+
+      }
+      #roig{
+        background-color: red;
+        border-radius: 50%;
+      }
+      #groc{
+        background-color: orange;
+        border-radius: 50%;
+      }
+      #verd{
+        background-color: green;
+        border-radius: 50%;
+      }
+      #accio{
+        width: 65%;
+        height: 600px;
+        font-size: 1.8em;
+        line-height: 1.7em;
+        font-weight: 900;
+        float: left;
+        margin: 0;
+        padding: 0;
+        color: #FFF;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Saps com funciona un semàfor?</h2>
+    <ul>
+      <li id="roig"></li>
+      <li id="groc" onclick="groc()"></li>
+      <li id="verd" onclick="verd()"></li>
+    </ul>
+    <p id="accio"></p>
+    <script type="text/javascript" language="javascript">
+    //Aquí demanem que s'introdueixin dades
+      //var semafor=prompt("Quin és el color del semàfor?");
+      document.getElementById("roig").addEventListener('click',roig);
+    // Aquí fem la comparació
+    function roig(){
+      document.body.style.backgroundColor="red";
+      document.getElementById("roig").style.border="10px solid #FFF";
+      document.getElementById("accio").innerHTML="Para";
+      document.getElementById("groc").style.border="0px";
+      document.getElementById("verd").style.border="0px";
+    }
+    function verd(){
+      document.body.style.backgroundColor="green";
+      document.getElementById("verd").style.border="10px solid #FFF";
+      document.getElementById("accio").innerHTML="<br/><br/>Passa";
+      document.getElementById("groc").style.border="0px";
+      document.getElementById("roig").style.border="0px";
+    }
+    function groc(){
+      document.body.style.backgroundColor="orange";
+      document.getElementById("groc").style.border="10px solid #FFF";
+      document.getElementById("accio").innerHTML="<br/>Precaució";
+      document.getElementById("roig").style.border="0px";
+      document.getElementById("verd").style.border="0px";
+    }
+
+    </script>
+  </body>
+</html>

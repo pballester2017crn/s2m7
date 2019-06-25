@@ -1,0 +1,109 @@
+ <html>
+  <head>    
+    <meta charset="UTF-8"/>
+    <title>Input</title>
+    <style>
+      body{
+        font-size: 36px;
+        font-weight: 900;
+        font-family: sans-serif;
+        color: #093;
+        margin: 0;
+        padding: 0;        
+        text-align: center;
+      }
+      
+      #cc{
+        width: 90%;
+        height: 60px;
+        background-color: #ccc;
+        border-radius: 5px;
+        margin: 20px auto;
+        font-size: 1em;
+        padding: 20px 0;
+        border: solid 5px;
+      }
+      input{
+        width: 90%;
+        height: 100px;
+        font-size: 1em;
+        color: #093;
+        margin: 20px auto;
+        border: solid 5px;
+        padding-left: 50px;
+      }
+      #envia{
+        border: solid 5px;
+        font-size: 36px;
+        color: #093;
+        padding: 0px;
+        background-color: #ccc;
+        display: block;
+        margin: 20px auto; 
+      }
+      #user{        
+        width: 90%;
+        margin: 40px auto;
+      }
+      #usern{
+        float:left;
+        width: 20%;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      #usuari{
+        float:left;
+        width: 80%;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: left;
+      }
+      hr{
+        width: 90%;
+        margin: 50px auto 30px auto;
+      }
+
+    </style>
+  </head>
+
+  <body>
+      <ul id="user">
+        <li id="usern">usuari</li>
+        <li id="usuari"></li>
+      </ul>       
+      
+      <input type="text" id="nom" placeholder="nom">      
+      <input type="text" id="cognom" placeholder="cognom">
+      <input type="submit" id="envia" value="Registra't">
+      <hr/>
+      <input type="text" id="color" placeholder="Color">
+      <h2 id="cc">Canvia color</h2>
+    
+    <script type="text/javascript" language="javascript">
+      document.getElementById('envia').addEventListener('click',registre);
+      document.getElementById('cc').addEventListener('click',canvia);
+      function canvia() {
+        var color=document.getElementById('color').value;
+        document.body.style.color=color;  
+        document.getElementById('envia').style.borderColor=color;
+        document.getElementById('envia').style.color=color;
+        document.getElementById('cc').style.borderColor=color;
+        document.getElementById('nom').style.borderColor=color;
+        document.getElementById('cognom').style.borderColor=color;
+        document.getElementById('color').style.borderColor=color;
+        document.getElementById('nom').style.color=color;
+        document.getElementById('cognom').style.color=color;
+        document.getElementById('color').style.color=color;
+
+      }
+      function registre(){
+        var nom=document.getElementById('nom').value;
+        var cognom=document.getElementById('cognom').value;
+        document.getElementById('usuari').innerHTML=nom+" "+cognom;
+
+      }
+    </script>
+  </body>
+</html>

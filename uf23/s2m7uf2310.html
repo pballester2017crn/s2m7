@@ -1,0 +1,69 @@
+ <html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Calendari</title>
+    <style>
+      body{
+        font-size: 36px;
+        font-weight: 900;
+        font-family: sans-serif;
+        color: #093;
+
+      }
+      table{
+        background-color: #EED;
+        border: solid 1pt #999;
+        padding: 5px;
+        text-align: center;
+        margin: 10px auto;
+      }
+      td, tr{
+        background-color: #FFF;
+        border: solid 0pt #336;
+        padding: 5px;
+        text-align: center;
+      }
+      td{
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" language="javascript">
+    function mes() {
+      document.write("<table>");
+      //Variable array
+      var dies=["dilluns","dimarts","dimecres","dijous","divendres","dissabte","diumenge"];
+      var i=0;
+      //dies.length numero elements de la variable
+      document.write("<tr>");
+      while (i<dies.length) {
+        document.write("<td>"+dies[i]+"</td>");
+        i++; //recorda augmentar contador
+      }
+      document.write("</tr>");
+      var j=1;
+      while (j<=31) {
+        var k=0; //contador 0 a 6
+        document.write("<tr>");
+        while (k<7) {
+          if (j<=31) {
+            document.write("<td>"+j+"</td>");
+            j++;
+            k++;
+          } else {
+            break;
+          }
+        }
+        document.write("</tr>");
+      }
+      document.write("</table>");
+    }
+  mes();  
+  mes();
+  mes();
+  mes();
+  mes();
+    </script>
+  </body>
+</html>

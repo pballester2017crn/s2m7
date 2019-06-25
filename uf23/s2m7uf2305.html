@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Semàfor</title>
+    <style>
+      body{
+        font-size: 144px;
+        font-weight: 900;
+        font-family: sans-serif;
+        color: #FFF;
+
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" language="javascript">
+    //Aquí demanem que s'introdueixin dades
+      var semafor=prompt("Quin és el color del semàfor?");
+
+    // Aquí fem la comparació
+      if(semafor=="roig"){
+        document.write("STOP");
+        document.body.style.backgroundColor="red";
+      }
+      else if(semafor=="verd"){
+        document.write("Passa");
+        document.body.style.backgroundColor="green";
+      }
+      else{
+        document.write("Precaució");
+        document.body.style.backgroundColor="yellow";
+      }
+    </script>
+  </body>
+</html>

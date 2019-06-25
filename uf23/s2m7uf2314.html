@@ -1,0 +1,77 @@
+ <html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Imatge00</title>
+    <style>
+      body{
+        font-size: 36px;
+        font-weight: 900;
+        font-family: sans-serif;
+        color: ;
+        margin: 0;
+        padding: 0;
+      }
+      #tot{
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      h2{
+        margin: 50px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
+      }
+    .foto{
+        width: 18.9%;
+        cursor: pointer;
+
+    }
+    #imatge{
+      width: 100%;
+    }
+    #imgpetit{
+      margin-top: 10px;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="tot">
+      <h2>Galeria d'imatges</h2>
+      <img id="imatge" src="img/menjar/food00.jpg"/>
+      <div id="imgpetit">
+        <img class="foto" src="img/menjar/food00.jpg"/>
+        <img class="foto" src="img/menjar/food01.jpg"/>
+        <img class="foto" src="img/menjar/food02.jpg"/>
+        <img class="foto" src="img/menjar/food03.jpg"/>
+        <img class="foto" src="img/menjar/food04.jpg"/>
+      </div>
+    </div>
+
+    <script type="text/javascript" language="javascript">
+    var image=document.getElementById('imatge');
+    var foton=document.getElementsByClassName('foto');
+    function img0(){
+      image.src=foton[0].src;
+    }
+    function img1(){
+      image.src=foton[1].src;
+    }
+    function img2(){
+      image.src=foton[2].src;
+    }
+    function img3(){
+      image.src=foton[3].src;
+    }
+    function img4(){
+      image.src=foton[4].src;
+    }
+      foton[0].addEventListener('click', img0);
+      foton[1].addEventListener('click', img1);
+      foton[2].addEventListener('click', img2);
+      foton[3].addEventListener('click', img3);
+      foton[4].addEventListener('click', img4);
+
+
+    </script>
+  </body>
+</html>
