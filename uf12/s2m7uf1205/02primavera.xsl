@@ -14,7 +14,7 @@ encoding="UTF-8" indent="yes"/>
             font-size: 18px;
             line-height: 22px;
             font-family: sans-serif;
-            width: 90%;
+            width: 95%;
             background-color: ivory;
             margin: 0 auto;
 
@@ -22,6 +22,7 @@ encoding="UTF-8" indent="yes"/>
 
           #principal{
             width: 78%;
+            padding-top: 15px;
 
 
           }
@@ -41,18 +42,29 @@ encoding="UTF-8" indent="yes"/>
             padding: 0;
             padding-top: 250px;
             padding-left: 10px;
-
+            font-weight: 100;
+            color: #FFF;
+            font-size: 0.8em;
+            line-height: 1.2em;
           }
           ul{
           padding-left: 0;
           margin-bottom: 0;
           }
           li{
-            list-style-type: none;
+            list-style-type: none;            
           }
           h2{
           margin: 0;
           padding: 0;
+          }
+          h3{
+          margin: 10px 0;
+          padding: 0;          
+          font-size: 0.8em;
+          line-height: 1.2em;
+          text-transform: uppercase;
+          font-weight: 400;
           }
           #info{
             background-color: rgba(2204, 0, 102,0.5);
@@ -83,15 +95,16 @@ encoding="UTF-8" indent="yes"/>
           }
           a{
             text-decoration: none;
+            color: #FFF;
           }
           a:link{
-            color: #c06;
+            color: #FFF;
           }
           a:hover{
             color: #f9c;
           }
           a:visited{
-            color: #c06;
+            color: #FFF;
           }
           a:active{
             color: #f9c;
@@ -105,6 +118,11 @@ encoding="UTF-8" indent="yes"/>
             padding: 10px;
             border-left: solid 1px #FFF;
 
+          }
+          #d li{
+          font-weight: 100;
+          font-size: 1em;
+          line-height: 1.2em;        
           }
 
         </style>
@@ -126,7 +144,7 @@ encoding="UTF-8" indent="yes"/>
 
         <div id="principal">
           <xsl:for-each select="primavera/grup">
-            <a href="{id}.xml" target="_blank">
+            <a href="{id}.xml">
             <xsl:choose>
 
               <xsl:when test="Dia='miércoles 27 de mayo'">
@@ -137,7 +155,7 @@ encoding="UTF-8" indent="yes"/>
                   <div class="txt" style="background-color:rgba(150,100,50,0.5);">
                     <h2 id="{id}"><xsl:value-of select="Artista"/></h2>
                     <h3><xsl:value-of select="Titol"/></h3>
-                    <ul>
+                    <ul id="d">
                       <li><xsl:value-of select="Disc"/></li>
                       <li><xsl:value-of select="Dia"/></li>
                       <li><xsl:value-of select="Lloc"/></li>
@@ -157,7 +175,7 @@ encoding="UTF-8" indent="yes"/>
                   <div class="txt" style="background-color:rgba(50,150,100,0.5);">
                     <h2 id="{id}"><xsl:value-of select="Artista"/></h2>
                     <h3><xsl:value-of select="Titol"/></h3>
-                    <ul>
+                    <ul id="d">
                       <li><xsl:value-of select="Disc"/></li>
                       <li><xsl:value-of select="Dia"/></li>
                       <li><xsl:value-of select="Lloc"/></li>
@@ -176,7 +194,7 @@ encoding="UTF-8" indent="yes"/>
                   <div class="txt" style="background-color:rgba(50,100,150,0.5);">
                     <h2 id="{id}"><xsl:value-of select="Artista"/></h2>
                     <h3><xsl:value-of select="Titol"/></h3>
-                    <ul>
+                    <ul id="d">
                       <li><xsl:value-of select="Disc"/></li>
                       <li><xsl:value-of select="Dia"/></li>
                       <li><xsl:value-of select="Lloc"/></li>
@@ -192,10 +210,10 @@ encoding="UTF-8" indent="yes"/>
 
               <xsl:otherwise>
                 <div class="grup" style="background-image:url({image}); background-repeat: no-repeat; background-size: cover;">
-                  <div class="txt" style="background-color:rgba(80,50,120,0.5);">
+                  <div class="txt" style="background-color:rgba(150,50,80,0.5);">
                     <h2 id="{id}"><xsl:value-of select="Artista"/></h2>
                     <h3><xsl:value-of select="Titol"/></h3>
-                    <ul>
+                    <ul id="d">
                       <li><xsl:value-of select="Disc"/></li>
                       <li><xsl:value-of select="Dia"/></li>
                       <li><xsl:value-of select="Lloc"/></li>

@@ -21,11 +21,12 @@ encoding="UTF-8" indent="yes"/>
             width: 78%;
             padding-top: 10px;
 
+
           }
           .grup{
             background-color: #FCE;
             width: 49%;
-            display: inline-block;
+            float:left;
             color: #DDD;
             padding: 0px;
             overflow: hidden;
@@ -42,6 +43,7 @@ encoding="UTF-8" indent="yes"/>
             color: #FFF;
             font-size: 0.8em;
             line-height: 1.2em;
+
           }
           ul{
           padding-left: 0;
@@ -80,7 +82,7 @@ encoding="UTF-8" indent="yes"/>
           #menu{
            background-color: #333;
            margin: 10px;
-           width: 20%;
+           width: 21%;
            float: right;
            
            padding-top: 20px;
@@ -115,9 +117,9 @@ encoding="UTF-8" indent="yes"/>
             border-left: solid 1px #FFF;
           }
           #d li{
-          font-weight: 100;
-          font-size: 1em;
-          line-height: 1.2em;          
+            font-weight: 100;
+            font-size: 1em;
+            line-height: 1.2em;          
           }
 
         </style>
@@ -133,7 +135,7 @@ encoding="UTF-8" indent="yes"/>
 
         <ul id="menu">
           <xsl:for-each select="primavera/grup">
-            <xsl:if test="Dia='miércoles 27 de mayo'">
+            <xsl:if test="Dia='jueves 28 de mayo'">
               <li><a href="#{id}"><xsl:value-of select="Artista"/></a></li>
             </xsl:if>
           </xsl:for-each>
@@ -142,10 +144,11 @@ encoding="UTF-8" indent="yes"/>
         <div id="principal">
 
           <xsl:for-each select="primavera/grup">
-            <xsl:if test="Dia='miércoles 27 de mayo'">
-              <a href="{id}.xml">
+            
+            <xsl:if test="Dia='jueves 28 de mayo'">
+                <a href="{id}.xml">
                   <div class="grup" style="background-image:url({image}); background-repeat: no-repeat; background-size: cover;">
-                    <div class="txt" style="background-color:rgba(150,100,50,0.5);">
+                    <div class="txt" style="background-color:rgba(150,50,80,0.5);">
                       <h2 id="{id}"><xsl:value-of select="Artista"/></h2>
                       <h3><xsl:value-of select="Titol"/></h3>
                       <ul id="d">
@@ -161,8 +164,9 @@ encoding="UTF-8" indent="yes"/>
                       </div>
                     </div>
                   </div>
-              </a>
+                </a>
             </xsl:if>
+
           </xsl:for-each>
 
         </div>

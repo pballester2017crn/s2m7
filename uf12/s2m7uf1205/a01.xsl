@@ -14,7 +14,7 @@ encoding="UTF-8" indent="yes"/>
             font-size: 18px;
             line-height: 22px;
             font-family: sans-serif;
-            width: 90%;
+            width: 95%;
             background-color: ivory;
             margin: 0 auto;
 
@@ -22,12 +22,13 @@ encoding="UTF-8" indent="yes"/>
 
           #principal{
             width: 78%;
+            padding-top: 15px;
 
 
           }
           .grup{
-            background-color: #FCE;
-            width: 100%;
+            background-color: ;
+            width: 99%;
             float: left;
             color: #DDD;
             padding: 0px;
@@ -38,9 +39,13 @@ encoding="UTF-8" indent="yes"/>
           }
           .txt{
             margin: 0;
-            padding: 0;
-            padding-top: 250px;
-            padding-left: 10px;
+            padding: 300px 10px 0 10px;
+            
+            font-weight: 100;
+            color: #FFF;
+            font-size: 1em;
+            line-height: 1.2em;
+            
 
           }
           ul{
@@ -55,13 +60,10 @@ encoding="UTF-8" indent="yes"/>
           padding: 0;
           }
           #info{
-            background-color: rgba(2204, 0, 102,0.5);
-            width: 15%;
-            margin-top: 5px;
-            padding: 10px;
+            display: none;
           }
-          #ocult{
-
+          #ocult{           
+            
 
 					}
 					#ocult:hover{
@@ -83,13 +85,13 @@ encoding="UTF-8" indent="yes"/>
             text-decoration: none;
           }
           a:link{
-            color: #c06;
+            color: #FFF;
           }
           a:hover{
             color: #f9c;
           }
           a:visited{
-            color: #c06;
+            color: #FFF;
           }
           a:active{
             color: #f9c;
@@ -103,6 +105,11 @@ encoding="UTF-8" indent="yes"/>
             padding: 10px;
             border-left: solid 1px #FFF;
 
+          }
+          #d li{
+          font-weight: 100;
+          font-size: 1.2em;
+          line-height: 1.2em;        
           }
 
         </style>
@@ -123,12 +130,12 @@ encoding="UTF-8" indent="yes"/>
         </ul>
 
         <div id="principal">
-          <xsl:for-each select="primavera/grup[10]">
-                <div class="grup" style="background-image:url({image}); background-repeat: no-repeat; background-size: cover;">
+          <xsl:for-each select="primavera/grup[1]">
+                <div class="grup" style="background-image:url({image}); background-repeat: no-repeat; background-size: 100% auto;">
                   <div class="txt" style="background-color:rgba(150,100,50,0.5);">
                     <h2 id="{id}"><xsl:value-of select="Artista"/></h2>
                     <h3><xsl:value-of select="Titol"/></h3>
-                    <ul>
+                    <ul id="d">
                       <li><xsl:value-of select="Disc"/></li>
                       <li><xsl:value-of select="Dia"/></li>
                       <li><xsl:value-of select="Lloc"/></li>

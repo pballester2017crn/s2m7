@@ -9,23 +9,27 @@ encoding="UTF-8" indent="yes"/>
         <meta charset="utf-8"/>
         <style>
           body{
-            margin: 0 auto;
+
             padding: 0;
             font-size: 18px;
             line-height: 22px;
             font-family: sans-serif;
             width: 95%;
             background-color: ivory;
+            margin: 0 auto;
+
           }
+
           #principal{
             width: 78%;
-            padding-top: 10px;
+            padding-top: 15px;
+
 
           }
           .grup{
-            background-color: #FCE;
-            width: 49%;
-            display: inline-block;
+            background-color: ;
+            width: 99%;
+            float: left;
             color: #DDD;
             padding: 0px;
             overflow: hidden;
@@ -35,13 +39,14 @@ encoding="UTF-8" indent="yes"/>
           }
           .txt{
             margin: 0;
-            padding: 0;
-            padding-top: 250px;
-            padding-left: 10px;
+            padding: 300px 10px 0 10px;
+            
             font-weight: 100;
             color: #FFF;
-            font-size: 0.8em;
+            font-size: 1em;
             line-height: 1.2em;
+            
+
           }
           ul{
           padding-left: 0;
@@ -54,36 +59,23 @@ encoding="UTF-8" indent="yes"/>
           margin: 0;
           padding: 0;
           }
-          h3{
-          margin: 10px 0;
-          padding: 0;          
-          font-size: 0.8em;
-          line-height: 1em;
-          text-transform: uppercase;
-          font-weight: 400;
-          }
           #info{
-            background-color: rgba(2204, 0, 102,0.5);
-            width: 15%;
-            margin-top: 5px;
-            padding: 10px;
+            display: none;
           }
-          #ocult{
-					height: 10px;
-					transition-property: display;
-         	transition-duration: 2s;
-         	overflow: hidden;
+          #ocult{           
+            
+
 					}
 					#ocult:hover{
 					height: auto;
 					}
           #menu{
            background-color: #333;
-           margin: 10px;
-           width: 20%;
+
+           width: 22%;
            float: right;
-           
-           padding-top: 20px;
+
+
           }
           #menu li{
             padding: 10px;
@@ -91,7 +83,6 @@ encoding="UTF-8" indent="yes"/>
           }
           a{
             text-decoration: none;
-            color: #FFF;
           }
           a:link{
             color: #FFF;
@@ -113,59 +104,52 @@ encoding="UTF-8" indent="yes"/>
             display: inline-block;
             padding: 10px;
             border-left: solid 1px #FFF;
+
           }
           #d li{
           font-weight: 100;
-          font-size: 1em;
-          line-height: 1.2em;          
+          font-size: 1.2em;
+          line-height: 1.2em;        
           }
 
         </style>
       </head>
       <body>
-        <h1>Primavera</h1>
+
+        <h1>Primavera Sound</h1>
         <ul id="dies">
           <li><a href="dimecres.xml">Dimecres</a></li>
           <li><a href="dijous.xml">Dijous</a></li>
           <li><a href="divendres.xml">Divendres</a></li>
           <li><a href="dissabte.xml">Dissabte</a></li>
         </ul>
-
         <ul id="menu">
           <xsl:for-each select="primavera/grup">
-            <xsl:if test="Dia='miércoles 27 de mayo'">
               <li><a href="#{id}"><xsl:value-of select="Artista"/></a></li>
-            </xsl:if>
           </xsl:for-each>
         </ul>
 
         <div id="principal">
-
-          <xsl:for-each select="primavera/grup">
-            <xsl:if test="Dia='miércoles 27 de mayo'">
-              <a href="{id}.xml">
-                  <div class="grup" style="background-image:url({image}); background-repeat: no-repeat; background-size: cover;">
-                    <div class="txt" style="background-color:rgba(150,100,50,0.5);">
-                      <h2 id="{id}"><xsl:value-of select="Artista"/></h2>
-                      <h3><xsl:value-of select="Titol"/></h3>
-                      <ul id="d">
-                        <li><xsl:value-of select="Disc"/></li>
-                        <li><xsl:value-of select="Dia"/></li>
-                        <li><xsl:value-of select="Lloc"/></li>
-
-                        <li><a href="{Web}" target="_blank"><xsl:value-of select="Web"/></a></li>
-                        <li id="info">+info</li>
-                      </ul>
-                      <div id="ocult">
-                        <p><xsl:value-of select="Descripcio"/></p>
-                      </div>
+          <xsl:for-each select="primavera/grup[11]">
+                <div class="grup" style="background-image:url({image}); background-repeat: no-repeat; background-size: 100% auto;">
+                  <div class="txt" style="background-color:rgba(50,150,100,0.5);">
+                    <h2 id="{id}"><xsl:value-of select="Artista"/></h2>
+                    <h3><xsl:value-of select="Titol"/></h3>
+                    <ul id="d">
+                      <li><xsl:value-of select="Disc"/></li>
+                      <li><xsl:value-of select="Dia"/></li>
+                      <li><xsl:value-of select="Lloc"/></li>
+                      <li><a href="{Web}" target="_blank"><xsl:value-of select="Web"/></a></li>
+                      <li id="info">+info</li>
+                    </ul>
+                    <div id="ocult">
+                      <p><xsl:value-of select="Descripcio"/></p>
                     </div>
                   </div>
-              </a>
-            </xsl:if>
+                </div>
           </xsl:for-each>
-
         </div>
+
       </body>
     </html>
   </xsl:template>

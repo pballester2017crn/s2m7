@@ -115,9 +115,9 @@ encoding="UTF-8" indent="yes"/>
             border-left: solid 1px #FFF;
           }
           #d li{
-          font-weight: 100;
-          font-size: 1em;
-          line-height: 1.2em;          
+            font-weight: 100;
+            font-size: 1em;
+            line-height: 1.2em;        
           }
 
         </style>
@@ -133,7 +133,7 @@ encoding="UTF-8" indent="yes"/>
 
         <ul id="menu">
           <xsl:for-each select="primavera/grup">
-            <xsl:if test="Dia='miércoles 27 de mayo'">
+            <xsl:if test="Dia='viernes 29 de mayo'">
               <li><a href="#{id}"><xsl:value-of select="Artista"/></a></li>
             </xsl:if>
           </xsl:for-each>
@@ -142,10 +142,10 @@ encoding="UTF-8" indent="yes"/>
         <div id="principal">
 
           <xsl:for-each select="primavera/grup">
-            <xsl:if test="Dia='miércoles 27 de mayo'">
-              <a href="{id}.xml">
+            <xsl:if test="Dia='viernes 29 de mayo'">
+                <a href="{id}.xml">
                   <div class="grup" style="background-image:url({image}); background-repeat: no-repeat; background-size: cover;">
-                    <div class="txt" style="background-color:rgba(150,100,50,0.5);">
+                    <div class="txt" style="background-color:rgba(50,150,100,0.5);">
                       <h2 id="{id}"><xsl:value-of select="Artista"/></h2>
                       <h3><xsl:value-of select="Titol"/></h3>
                       <ul id="d">
